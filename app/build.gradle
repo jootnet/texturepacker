@@ -1,0 +1,28 @@
+plugins {
+    id 'application'
+    id 'eclipse'
+}
+
+repositories {
+	mavenLocal()
+	mavenCentral()
+	google()
+	gradlePluginPortal()
+	maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
+	maven { url "https://oss.sonatype.org/content/repositories/releases/" }
+	maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    implementation 'com.badlogicgames.gdx:gdx-tools:1.11.0'
+}
+
+application {
+    mainClass = 'texturepacker.WZLImagePacker'
+}
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+project.sourceCompatibility = 11
+
+eclipse.project.name = rootProject.name + '-' + name
